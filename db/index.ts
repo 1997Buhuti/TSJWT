@@ -27,10 +27,10 @@ export function invalidateSession(sessionId: string) {
   return sessions[sessionId];
 }
 
-export function createSession(email: string) {
+export function createSession(email: string, name: string) {
   const sessionId = String(Object.keys(sessions).length + 1);
 
-  const session = { sessionId, email, valid: true };
+  const session = { sessionId, email, valid: true, name };
 
   sessions[sessionId] = session;
 
